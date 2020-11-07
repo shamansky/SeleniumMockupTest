@@ -8,7 +8,7 @@ namespace CreditCards.UITests
         ///// Brief delay to slow down browser interactions for
         ///// demo video recording purposes
         ///// </summary>
-        public static void Pause(int secondsToPause = 1000)
+        public static void Pause(int secondsToPause = 2000)
         {
             Thread.Sleep(secondsToPause);
         }

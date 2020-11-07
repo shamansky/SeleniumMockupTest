@@ -12,20 +12,37 @@ namespace CreditCards.UITests
         private const string HomeTitle = "Home Page - Credit Cards";
         private const string AboutUrl = "http://localhost:5258/Home/About";
 
-        //[Fact]
-        //[Trait("Category", "Smoke")]
-        //public void LoadApplicationPage()
-        //{
-        //    using (IWebDriver driver = new ChromeDriver())
-        //    {
-        //        driver.Navigate().GoToUrl(HomeUrl);
+        [Fact]
+        [Trait("Category", "Smoke")]
+        public void LoadHomePage()
+        {
+            using (IWebDriver driver = new ChromeDriver())
+            {
+                driver.Navigate().GoToUrl(HomeUrl);
 
-        //        DemoHelper.Pause();
-               
-        //        Assert.Equal(HomeTitle, driver.Title);
-        //        Assert.Equal(HomeUrl, driver.Url);
-        //    }
-        //}
+                driver.Manage().Window.Maximize();
+                DemoHelper.Pause();
+
+                driver.Manage().Window.Minimize();
+                DemoHelper.Pause();
+
+                driver.Manage().Window.Size = new System.Drawing.Size(300, 400);
+                DemoHelper.Pause();
+
+                driver.Manage().Window.Position = new System.Drawing.Point(50, 50);
+                DemoHelper.Pause();
+
+                driver.Manage().Window.Position = new System.Drawing.Point(100, 100);
+                DemoHelper.Pause();
+
+                driver.Manage().Window.FullScreen();
+                DemoHelper.Pause();
+
+
+                Assert.Equal(HomeTitle, driver.Title);
+                Assert.Equal(HomeUrl, driver.Url);
+            }
+        }
 
         //[Fact]
         //[Trait("Category", "Smoke")]
